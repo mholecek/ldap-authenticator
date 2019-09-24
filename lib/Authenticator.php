@@ -145,7 +145,7 @@ class Authenticator implements IAuthenticator
 	 * @return Identity|\Nette\Security\IIdentity
 	 * @throws \Nette\Security\AuthenticationException
 	 */
-	public function authenticate(array $credentials)
+	public function authenticate(array $credentials): \Nette\Security\IIdentity
 	{
 		list($username, $password) = $credentials;
 		$username = call_user_func_array($this->usernameGenerator, array($this->ldap, $username));
