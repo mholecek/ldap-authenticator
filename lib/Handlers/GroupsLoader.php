@@ -146,7 +146,7 @@ class GroupsLoader extends BaseHandler
 	 */
 	protected function getGroupMemberOf(Manager $ldap, $groupDn)
 	{
-		return $ldap->search(null, str_replace(':group:', ldap_escape($groupDn, null, LDAP_ESCAPE_DN), self::$GroupMemberOfLookup));
+		return $ldap->search(null, str_replace(':group:', ldap_escape($groupDn, null, LDAP_ESCAPE_FILTER), self::$GroupMemberOfLookup));
 	}
 }
 
